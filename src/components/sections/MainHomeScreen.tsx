@@ -9,7 +9,7 @@ function MainHomeScreen() {
   return (
     <div className="relative w-full min-h-[200vh] md:min-h-screen overflow-x-hidden bg-gradient-to-b from-[#030637] via-[#360342] to-[#720455]">
       {/* Fixed Navbar overlays the top, no border */}
-      <div className="fixed top-0 left-0 w-full z-20 bg-transparent backdrop-blur">
+      <div className="fixed top-0 left-0 py-6 w-full z-20 bg-transparent backdrop-blur">
         <Nav />
       </div>
       {/* Fixed Stars Background - covers entire screen, above gradient, below content */}

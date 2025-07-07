@@ -47,7 +47,7 @@ function ThreeD() {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <Canvas
-        className="z-30"
+        className="z-10"
         shadows
         gl={{ antialias: false }}
         dpr={[1, 1.5]}

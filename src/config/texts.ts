@@ -2,6 +2,10 @@ export const texts = {
   // Navigation
   nav: {
     brand: "ASLI SAHIN",
+    home: "Home",
+    skills: "Skills",
+    projects: "Projects",
+    contact: "Contact",
   },
 
   // Main Text Component
