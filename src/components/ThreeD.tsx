@@ -344,8 +344,30 @@ function Model() {
       const mouseX = (clientX / innerWidth) * 2 - 1;
       const mouseY = -(clientY / innerHeight) * 2 + 1;
       const rotationSpeed = 0.2;
-      const targetRotationX = (-(mouseY * Math.PI) / 2) * rotationSpeed;
-      const yRotationOffset = 0;
+
+      // Responsive rotation offsets based on screen width
+      let xRotationOffset = 0;
+      let yRotationOffset = 0;
+      const w = window.innerWidth;
+      if (w < 640) {
+        xRotationOffset = 0;
+        yRotationOffset = 0.3;
+      } else if (w < 768) {
+        xRotationOffset = 0;
+        yRotationOffset = 0.35;
+      } else if (w < 1024) {
+        xRotationOffset = 0;
+        yRotationOffset = 0;
+      } else if (w < 1280) {
+        xRotationOffset = 0;
+        yRotationOffset = 0;
+      } else {
+        xRotationOffset = 0;
+        yRotationOffset = 0;
+      }
+
+      const targetRotationX =
+        (-(mouseY * Math.PI) / 2) * rotationSpeed + xRotationOffset;
       const targetRotationY =
         mouseX * Math.PI * rotationSpeed - Math.PI * 0.6 + yRotationOffset;
       gsap.to(meshRef.current.rotation, {
