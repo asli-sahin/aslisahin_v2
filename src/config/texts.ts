@@ -16,6 +16,11 @@ export const texts = {
       "I create beautiful, functional, and user-centered digital experiences that bring ideas to life through code and design.",
   },
 
+  about: {
+    summary:
+      "I create beautiful, functional, and user-centered digital experiences that bring ideas to life through code and design. I create beautiful, functional, and user-centered digital experiences that bring ideas to life through code and design.",
+  },
+
   // Lottie Animation
   lottie: {
     loading: "Loading animation...",

@@ -14,7 +14,7 @@ function Nav() {
   };
 
   return (
-    <nav className="w-full flex justify-between items-center py-6 px-8 z-20 relative">
+    <nav className="w-full flex justify-between items-center py-3 sm:py-4 md:py-6 px-4 md:px-8 z-20 relative">
       {/* Mobile Menu Button */}
       <div className="md:hidden flex items-center relative z-40 -mt-2">
         <button
@@ -23,7 +23,7 @@ function Nav() {
           onClick={toggleMobileMenu}
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5 sm:w-6 sm:h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -82,35 +82,34 @@ function Nav() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-30">
-          <div className="fixed top-0 left-0 right-0 bg-gradient-to-b from-[#030637] from-0% via-[#030637] via-85% to-transparent backdrop-blur-sm">
-            <div className="pt-16"></div>
-            <div className="px-8 pb-16">
-              <div className="flex flex-col space-y-2 pt-4">
+        <div className="md:hidden fixed inset-0 z-30 flex items-start justify-center h-[35vh]">
+          <div className="fixed top-0 left-0 right-0 bg-gradient-to-b from-[#030637] from-0% via-[#030637] via-85% to-transparent backdrop-blur-sm w-full flex flex-col justify-center pt-10 sm:pt-12 pb-10 px-4">
+            <div className="px-4 sm:px-8 flex flex-col justify-center">
+              <div className="flex flex-col space-y-2 pt-0">
                 <a
                   href="#home"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-base py-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.home}
                 </a>
                 <a
                   href="#skills"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-base py-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.skills}
                 </a>
                 <a
                   href="#projects"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-base py-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.projects}
                 </a>
                 <a
                   href="#contact"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-base py-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.contact}
