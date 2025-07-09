@@ -13,6 +13,17 @@ function Nav() {
     setIsMobileMenuOpen(false);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    closeMobileMenu();
+  };
+
   return (
     <nav className="w-full flex justify-between items-center py-2 sm:py-4 md:py-6 px-4 md:px-8 z-20 relative">
       {/* Mobile Menu Button */}
@@ -44,37 +55,37 @@ function Nav() {
 
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2 z-[9999] pointer-events-auto">
-        <a
-          href="#home"
-          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+        <button
+          onClick={() => scrollToSection("home")}
+          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium cursor-pointer"
         >
           {texts.nav.home}
-        </a>
-        <a
-          href="#skills"
-          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+        </button>
+        <button
+          onClick={() => scrollToSection("about")}
+          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium cursor-pointer"
         >
-          {texts.nav.skills}
-        </a>
-        <a
-          href="#home"
-          className="flex items-center transition-transform hover:scale-105"
+          {texts.nav.about}
+        </button>
+        <button
+          onClick={() => scrollToSection("home")}
+          className="flex items-center transition-transform hover:scale-105 cursor-pointer"
           aria-label="Go to home page"
         >
           <img src={logo} alt="Aslı Şahin Logo" className="h-12 w-auto" />
-        </a>
-        <a
-          href="#projects"
-          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+        </button>
+        <button
+          onClick={() => scrollToSection("skills")}
+          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium cursor-pointer"
         >
-          {texts.nav.projects}
-        </a>
-        <a
-          href="#contact"
-          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+          {texts.nav.skills}
+        </button>
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium cursor-pointer"
         >
           {texts.nav.contact}
-        </a>
+        </button>
       </div>
 
       {/* Empty div for balance */}
@@ -86,34 +97,31 @@ function Nav() {
           <div className="fixed top-0 left-0 right-0 bg-gradient-to-b from-[#030637] from-0% via-[#030637] via-85% to-transparent backdrop-blur-sm w-full flex flex-col justify-center pt-10 sm:pt-12 pb-10 px-4">
             <div className="px-4 sm:px-8 flex flex-col justify-center">
               <div className="flex flex-col space-y-2 pt-0">
-                <a
-                  href="#home"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm pb-1 pt-2 px-2"
-                  onClick={closeMobileMenu}
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm pb-1 pt-2 px-2 text-left"
                 >
                   {texts.nav.home}
-                </a>
-                <a
-                  href="#skills"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2"
-                  onClick={closeMobileMenu}
+                </button>
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2 text-left"
+                >
+                  {texts.nav.about}
+                </button>
+                <button
+                  onClick={() => scrollToSection("skills")}
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2 text-left"
                 >
                   {texts.nav.skills}
-                </a>
-                <a
-                  href="#projects"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2"
-                  onClick={closeMobileMenu}
-                >
-                  {texts.nav.projects}
-                </a>
-                <a
-                  href="#contact"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm pt-1 pb-2 px-2"
-                  onClick={closeMobileMenu}
+                </button>
+
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm pt-1 pb-2 px-2 text-left"
                 >
                   {texts.nav.contact}
-                </a>
+                </button>
               </div>
             </div>
           </div>

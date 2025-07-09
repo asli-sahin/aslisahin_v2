@@ -7,7 +7,10 @@ import gradientAnimation from "../../assets/animations/gradient.json";
 
 function MainHomeScreen() {
   return (
-    <div className="relative w-full min-h-[250vh] md:min-h-screen overflow-x-hidden bg-gradient-to-b from-[#030637] via-[#360342] to-[#720455]">
+    <div
+      id="home"
+      className="relative w-full min-h-[250vh] md:min-h-screen overflow-x-hidden bg-gradient-to-b from-[#030637] via-[#360342] to-[#720455]"
+    >
       {/* Fixed Navbar overlays the top, no border */}
       <div className="fixed top-0 left-0 py-3 sm:py-4 md:py-6 w-full z-20 bg-transparent backdrop-blur">
         <Nav />

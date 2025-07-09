@@ -3,6 +3,7 @@ import { texts } from "../../config/texts";
 function AboutSection() {
   return (
     <section
+      id="about"
       className="relative w-full h-screen min-h-screen overflow-x-hidden items-center justify-center flex"
       style={{ background: "linear-gradient(#720455, #4f0349 55%, #490079)" }}
     >
@@ -19,8 +20,8 @@ function AboutSection() {
             />
             {/* 'About me' label */}
             <span
-              className="absolute top-6 -right-11 sm:top-6 sm:-right-16 md:top-6 md:-right-14 text-[#ffffff] font-bold text-lg sm:text-2xl md:text-3xl select-none pointer-events-none playwrite-font"
-              style={{ textShadow: "2px 2px 4px #720455" }}
+              className="absolute top-6 -right-16 sm:top-6 sm:-right-20 md:top-6 md:-right-24 text-[#ffffff] font-bold text-lg sm:text-2xl md:text-3xl select-none pointer-events-none playwrite-font"
+              style={{ textShadow: "0px 0px 15px #fb83db" }}
             >
               About me
             </span>
