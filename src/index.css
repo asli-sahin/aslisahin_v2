@@ -45,4 +45,8 @@
   .section-container {
     @apply min-h-screen w-full flex flex-col;
   }
+
+  .playwrite-font {
+    font-family: "Playwrite", cursive;
+  }
 }

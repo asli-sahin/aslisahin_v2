@@ -7,7 +7,7 @@ import gradientAnimation from "../../assets/animations/gradient.json";
 
 function MainHomeScreen() {
   return (
-    <div className="relative w-full min-h-[200vh] md:min-h-screen overflow-x-hidden bg-gradient-to-b from-[#030637] via-[#360342] to-[#720455]">
+    <div className="relative w-full min-h-[250vh] md:min-h-screen overflow-x-hidden bg-gradient-to-b from-[#030637] via-[#360342] to-[#720455]">
       {/* Fixed Navbar overlays the top, no border */}
       <div className="fixed top-0 left-0 py-3 sm:py-4 md:py-6 w-full z-20 bg-transparent backdrop-blur">
         <Nav />
@@ -18,9 +18,9 @@ function MainHomeScreen() {
       <div className="block md:hidden">
         <div
           className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center"
-          style={{ top: "calc(150vh - 55vw)" }}
+          style={{ top: "calc(150vh)" }}
         >
-          <div className="relative flex items-center justify-center w-[110vw] h-[110vw] max-w-md max-h-md">
+          <div className="relative flex items-center justify-center w-screen h-screen">
             {/* Responsive gradient animation as background */}
             <div className="absolute inset-0 pointer-events-none w-full h-full rounded-full overflow-hidden flex items-center justify-center z-0">
               <LottieAnimation
@@ -52,10 +52,10 @@ function MainHomeScreen() {
           </div>
         </div>
         {/* Right/Visual Section - desktop gradient and 3D model stacked and centered */}
-        <div className="flex-1 flex items-center h-full justify-center md:justify-end relative min-h-[500px] overflow-visible">
+        <div className="flex-1 flex items-center h-screen justify-center md:justify-end relative min-h-[500px] overflow-visible">
           <div className="relative flex items-center justify-center w-[40vw] h-[40vw] max-w-[600px] max-h-[600px]">
             {/* Gradient animation as background */}
-            <div className="absolute inset-0 pointer-events-none hidden md:block w-full h-full rounded-full overflow-hidden flex items-center justify-center z-0">
+            <div className="absolute inset-0 pointer-events-none hidden md:block w-full h-full rounded-full overflow-hidden items-center justify-center z-0">
               <LottieAnimation
                 animationData={gradientAnimation}
                 className="w-full h-full"

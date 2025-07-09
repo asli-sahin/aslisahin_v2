@@ -86,5 +86,15 @@
   font-display: swap;
 }
 
+/* Playwrite Font */
+@font-face {
+  font-family: "Playwrite";
+  src: url("/fonts/PlaywriteCU-VariableFont_wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Alternative: If you prefer to use Google Fonts variable font */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");

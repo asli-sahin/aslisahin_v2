@@ -14,9 +14,9 @@ function Nav() {
   };
 
   return (
-    <nav className="w-full flex justify-between items-center py-3 sm:py-4 md:py-6 px-4 md:px-8 z-20 relative">
+    <nav className="w-full flex justify-between items-center py-2 sm:py-4 md:py-6 px-4 md:px-8 z-20 relative">
       {/* Mobile Menu Button */}
-      <div className="md:hidden flex items-center relative z-40 -mt-2">
+      <div className="md:hidden flex items-center relative z-40 -mt-1">
         <button
           className="text-white hover:text-blue-300 transition-colors duration-200"
           aria-label="Toggle mobile menu"
@@ -88,28 +88,28 @@ function Nav() {
               <div className="flex flex-col space-y-2 pt-0">
                 <a
                   href="#home"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm pb-1 pt-2 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.home}
                 </a>
                 <a
                   href="#skills"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.skills}
                 </a>
                 <a
                   href="#projects"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.projects}
                 </a>
                 <a
                   href="#contact"
-                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-2 px-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm pt-1 pb-2 px-2"
                   onClick={closeMobileMenu}
                 >
                   {texts.nav.contact}

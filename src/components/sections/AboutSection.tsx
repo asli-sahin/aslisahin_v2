@@ -3,29 +3,32 @@ import { texts } from "../../config/texts";
 function AboutSection() {
   return (
     <section
-      className="relative w-full min-h-screen overflow-x-hidden"
+      className="relative w-full h-screen min-h-screen overflow-x-hidden items-center justify-center flex"
       style={{ background: "linear-gradient(#720455, #4f0349 55%, #490079)" }}
     >
       {/* Content Container */}
-      <div className="flex flex-col md:flex-row items-center justify-center w-full h-screen px-4 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-16 md:py-0">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full h-full px-4 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         {/* Left: Photo and label */}
-        <div className="relative flex flex-col items-center md:items-start w-full max-w-lg min-h-0">
+        <div className="relative flex flex-col items-center w-full h-full justify-end md:justify-center max-w-lg min-h-0">
           {/* Photo in circle */}
           <div className="relative">
             <img
-              src="https://placehold.co/240x240/png"
+              src="/square.png"
               alt="Aslı Ayşe Şahin"
-              className="w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover border-4 border-white shadow-lg"
+              className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover border-4 border-white shadow-lg"
             />
             {/* 'About me' label */}
-            <span className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 md:-top-6 md:-right-6 bg-white bg-opacity-90 text-[#720455] font-bold text-base sm:text-lg md:text-2xl px-3 sm:px-4 py-1 rounded-full shadow-md select-none pointer-events-none">
+            <span
+              className="absolute top-6 -right-11 sm:top-6 sm:-right-16 md:top-6 md:-right-14 text-[#ffffff] font-bold text-lg sm:text-2xl md:text-3xl select-none pointer-events-none playwrite-font"
+              style={{ textShadow: "2px 2px 4px #720455" }}
+            >
               About me
             </span>
           </div>
         </div>
         {/* Right: Summary */}
-        <div className="flex items-center justify-center md:justify-end w-full max-w-2xl mt-8 sm:mt-12 md:mt-0">
-          <p className="text-white text-sm sm:text-base md:text-xl leading-relaxed text-center md:text-right px-2 md:px-0">
+        <div className="flex items-start pt-6 md:pt-0 md:items-center justify-start md:justify-end w-full max-w-2xl h-full">
+          <p className="text-white text-xs sm:text-base md:text-xl top leading-relaxed text-center md:text-right px-2 md:px-0">
             {texts.about.summary}
           </p>
         </div>
