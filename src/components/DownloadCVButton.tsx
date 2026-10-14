@@ -1,25 +1,13 @@
-import { useState } from "react";
-
 export function DownloadCVButton() {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleDownload = () => {
-    // Open CV in a new tab - this is more reliable for PDF files
-    const cvUrl = "/cv.pdf";
-    window.open(cvUrl, "_blank");
-  };
-
   return (
-    <button
-      onClick={handleDownload}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="fixed top-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+    <a
+      href="/cv.pdf"
+      target="_blank"
+      rel="noreferrer"
+      className="fixed top-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-32 h-10"
     >
       <svg
-        className={`w-4 h-4 transition-transform duration-300 ${
-          isHovered ? "animate-bounce" : ""
-        }`}
+        className="w-4 h-4 transition-transform duration-300"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -33,6 +21,6 @@ export function DownloadCVButton() {
         />
       </svg>
       <span className="font-medium">View CV</span>
-    </button>
+    </a>
   );
 }

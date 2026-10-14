@@ -14,7 +14,7 @@ function AboutSection() {
           {/* Photo in circle */}
           <div className="relative">
             <img
-              src="/square.png"
+              src="/square.png?v=2"
               alt="Aslı Ayşe Şahin"
               className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover border-4 border-white shadow-lg"
             />

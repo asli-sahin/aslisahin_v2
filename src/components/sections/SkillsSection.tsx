@@ -1,150 +1,168 @@
-import { texts } from "../../config/texts";
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
-import { useState, useEffect } from "react";
+import type { IconType } from "react-icons";
+import { FaCode, FaJava } from "react-icons/fa";
 import {
-  FaReact,
-  FaBootstrap,
-  FaCss3Alt,
-  FaGitAlt,
-  FaGithub,
-  FaJava,
-  FaPython,
-  FaNodeJs,
-} from "react-icons/fa";
-import {
+  SiAndroid,
+  SiBootstrap,
+  SiConfluence,
+  SiCss3,
+  SiDotnet,
+  SiFigma,
+  SiFirebase,
   SiFlutter,
-  SiTestinglibrary,
+  SiGit,
+  SiGithub,
+  SiHtml5,
   SiJavascript,
+  SiJira,
   SiNextdotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiSpring,
   SiTailwindcss,
   SiThreedotjs,
-  SiDotnet,
-  SiMysql,
+  SiTypescript,
 } from "react-icons/si";
-import { MdPhotoCamera } from "react-icons/md";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbDatabase } from "react-icons/tb";
 
-const skills = [
-  { name: "API Design", icon: <TbApi className="w-20 h-20 text-purple-400" /> },
-  { name: "RESTful API", icon: <TbApi className="w-20 h-20 text-green-400" /> },
+type SkillGroup = {
+  title: string;
+  level: number;
+  icons: { Icon: IconType; color: string }[];
+};
+
+const skillGroups: SkillGroup[] = [
   {
-    name: "Bootstrap",
-    icon: <FaBootstrap className="w-20 h-20 text-purple-600" />,
-  },
-  { name: "CSS", icon: <FaCss3Alt className="w-20 h-20 text-blue-400" /> },
-  { name: "Flutter", icon: <SiFlutter className="w-20 h-20 text-blue-500" /> },
-  {
-    name: "Functional Testing",
-    icon: <SiTestinglibrary className="w-20 h-20 text-pink-400" />,
-  },
-  { name: "Git", icon: <FaGitAlt className="w-20 h-20 text-orange-500" /> },
-  { name: "GitHub", icon: <FaGithub className="w-20 h-20 text-gray-300" /> },
-  { name: "Java", icon: <FaJava className="w-20 h-20 text-blue-700" /> },
-  {
-    name: "JavaScript",
-    icon: <SiJavascript className="w-20 h-20 text-yellow-400" />,
+    title: "Java & Spring Boot",
+    level: 5,
+    icons: [
+      { Icon: FaJava, color: "#f89820" },
+      { Icon: SiSpring, color: "#6db33f" },
+    ],
   },
   {
-    name: "Microsoft SQL Server",
-    icon: <SiMysql className="w-20 h-20 text-red-500" />,
-  },
-  { name: "MVC", icon: <SiDotnet className="w-20 h-20 text-blue-900" /> },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs className="w-20 h-20 text-gray-100" />,
-  },
-  {
-    name: "Photo Editing",
-    icon: <MdPhotoCamera className="w-20 h-20 text-pink-300" />,
-  },
-  { name: "Python", icon: <FaPython className="w-20 h-20 text-yellow-300" /> },
-  { name: "React", icon: <FaReact className="w-20 h-20 text-cyan-400" /> },
-  {
-    name: "React Native",
-    icon: <FaReact className="w-20 h-20 text-blue-400" />,
+    title: "C# & .NET / ASP.NET / ASP MVC",
+    level: 5,
+    icons: [
+      { Icon: FaCode, color: "#b39ddb" },
+      { Icon: SiDotnet, color: "#9b78dc" },
+    ],
   },
   {
-    name: "Tailwind",
-    icon: <SiTailwindcss className="w-20 h-20 text-cyan-300" />,
+    title: "JavaScript / TypeScript, React, React Native, Next.js, Three.js",
+    level: 5,
+    icons: [
+      { Icon: SiJavascript, color: "#f7df1e" },
+      { Icon: SiTypescript, color: "#3178c6" },
+      { Icon: SiReact, color: "#61dafb" },
+      { Icon: SiNextdotjs, color: "#f5f5f5" },
+      { Icon: SiThreedotjs, color: "#c7d2fe" },
+    ],
   },
   {
-    name: "Three.js",
-    icon: <SiThreedotjs className="w-20 h-20 text-green-300" />,
+    title: "Flutter & Mobile Development",
+    level: 5,
+    icons: [
+      { Icon: SiFlutter, color: "#54c5f8" },
+      { Icon: SiAndroid, color: "#a4c639" },
+    ],
   },
-  { name: ".NET", icon: <SiDotnet className="w-20 h-20 text-blue-900" /> },
-  { name: "Net MVC", icon: <SiDotnet className="w-20 h-20 text-blue-900" /> },
+  {
+    title: "Python, HTML, CSS, Tailwind CSS, Bootstrap",
+    level: 5,
+    icons: [
+      { Icon: SiPython, color: "#ffd43b" },
+      { Icon: SiHtml5, color: "#e34f26" },
+      { Icon: SiCss3, color: "#1572b6" },
+      { Icon: SiTailwindcss, color: "#38bdf8" },
+      { Icon: SiBootstrap, color: "#a879ff" },
+    ],
+  },
+  {
+    title: "RESTful APIs, Microsoft SQL Server, PostgreSQL, Firebase",
+    level: 4,
+    icons: [
+      { Icon: TbApi, color: "#78e0c1" },
+      { Icon: TbDatabase, color: "#a7b8ff" },
+      { Icon: SiPostgresql, color: "#699eca" },
+      { Icon: SiFirebase, color: "#ffca28" },
+    ],
+  },
+  {
+    title: "Git, GitHub, Jira, Confluence, Agile, Scrum",
+    level: 4,
+    icons: [
+      { Icon: SiGit, color: "#f05032" },
+      { Icon: SiGithub, color: "#f5f5f5" },
+      { Icon: SiJira, color: "#2684ff" },
+      { Icon: SiConfluence, color: "#579dff" },
+    ],
+  },
+  {
+    title: "Figma, UI/UX Prototyping",
+    level: 3,
+    icons: [{ Icon: SiFigma, color: "#f24e1e" }],
+  },
 ];
 
 function SkillsSection() {
-  const [perView, setPerView] = useState(6);
-
-  useEffect(() => {
-    function handleResize() {
-      const w = window.innerWidth;
-      if (w < 640) {
-        setPerView(2);
-      } else if (w < 768) {
-        setPerView(3);
-      } else if (w < 1280) {
-        setPerView(4);
-      } else {
-        setPerView(6);
-      }
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: true,
-    renderMode: "performance",
-    slides: {
-      perView,
-      spacing: 24,
-    },
-    drag: true,
-    created(slider) {
-      let timeout: number;
-      function next() {
-        slider.next();
-        timeout = setTimeout(next, 1500);
-      }
-      timeout = setTimeout(next, 1500);
-    },
-  });
-
   return (
     <section
       id="skills"
-      className="relative w-full h-screen min-h-screen overflow-x-hidden items-center justify-center flex"
-      style={{ background: "linear-gradient(#490079, #4f0349 55%, #720455)" }}
+      className="relative flex min-h-screen w-full items-center overflow-hidden text-white"
+      style={{
+        background: "linear-gradient(#490079, #4f0349 55%, #720455)",
+      }}
     >
-      {/* Content Container */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-full h-full px-5 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
-        <div className="flex flex-col items-start pt-28 justify-start w-full h-full">
-          <h1
-            className="text-white text-4xl font-bold mb-8"
-            style={{ textShadow: "0px 0px 15px #fb83db" }}
+      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-5 py-24 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <div className="mb-8 border-b border-white/15 pb-6">
+          <h2
+            className="text-4xl font-bold sm:text-5xl"
+            style={{ textShadow: "0 0 18px rgba(251, 131, 219, 0.35)" }}
           >
             Skills
-          </h1>
-          <div className="w-full h-full mb-28 mt-[20vh]">
-            <div ref={sliderRef} className="keen-slider">
-              {skills.map((skill) => (
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
+          {skillGroups.map((group) => (
+            <article
+              className="group border-b border-white/15 py-6"
+              key={group.title}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="max-w-[36ch] text-base font-semibold leading-6 text-white transition-colors group-hover:text-pink-100 sm:text-lg">
+                  {group.title}
+                </h3>
                 <div
-                  className="keen-slider__slide flex flex-col items-center justify-center min-w-[80px] flex-shrink-0 px-2"
-                  key={skill.name}
+                  aria-label={`Knowledge level: ${group.level} out of 5`}
+                  className="flex shrink-0 items-center gap-1.5 pt-1.5"
+                  role="img"
                 >
-                  {skill.icon}
-                  <span className="mt-2 text-white text-sm font-medium text-center whitespace-nowrap">
-                    {skill.name}
-                  </span>
+                  {Array.from({ length: 5 }, (_, dotIndex) => (
+                    <span
+                      className={`h-2.5 w-2.5 rounded-full ${
+                        dotIndex < group.level
+                          ? "bg-pink-300 shadow-[0_0_10px_rgba(251,131,219,0.55)]"
+                          : "bg-white/20"
+                      }`}
+                      key={dotIndex}
+                    />
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                {group.icons.map(({ Icon, color }, iconIndex) => (
+                  <Icon
+                    aria-hidden="true"
+                    className="h-[22px] w-[22px] shrink-0 opacity-90 transition-transform duration-200 group-hover:scale-110 motion-reduce:transition-none"
+                    key={`${group.title}-${iconIndex}`}
+                    style={{ color }}
+                  />
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
