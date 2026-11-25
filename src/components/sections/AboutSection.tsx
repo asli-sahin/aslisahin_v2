@@ -5,7 +5,7 @@ function AboutSection() {
     <section
       id="about"
       className="relative w-full h-screen min-h-screen overflow-x-hidden items-center justify-center flex"
-      style={{ background: "linear-gradient(#720455, #4f0349 55%, #490079)" }}
+      style={{ background: "linear-gradient(#490079, #4f0349 55%, #720455)" }}
     >
       {/* Content Container */}
       <div className="flex flex-col md:flex-row items-center justify-between w-full h-full px-4 md:px-12 lg:px-16 xl:px-20 2xl:px-24">

@@ -15,13 +15,16 @@ import {
   SiJavascript,
   SiJira,
   SiNextdotjs,
+  SiOracle,
   SiPostgresql,
+  SiPostman,
   SiPython,
   SiReact,
   SiSpring,
   SiTailwindcss,
   SiThreedotjs,
   SiTypescript,
+  SiVite,
 } from "react-icons/si";
 import { TbApi, TbDatabase } from "react-icons/tb";
 
@@ -49,13 +52,14 @@ const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "JavaScript / TypeScript, React, React Native, Next.js, Three.js",
+    title: "JavaScript / TypeScript, React, React Native, Next.js, Vite, Three.js",
     level: 5,
     icons: [
       { Icon: SiJavascript, color: "#f7df1e" },
       { Icon: SiTypescript, color: "#3178c6" },
       { Icon: SiReact, color: "#61dafb" },
       { Icon: SiNextdotjs, color: "#f5f5f5" },
+      { Icon: SiVite, color: "#646cff" },
       { Icon: SiThreedotjs, color: "#c7d2fe" },
     ],
   },
@@ -79,28 +83,30 @@ const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "RESTful APIs, Microsoft SQL Server, PostgreSQL, Firebase",
-    level: 4,
+    title: "RESTful APIs, WebRTC, Oracle SQL, Microsoft SQL Server, PostgreSQL, Firebase",
+    level: 5,
     icons: [
       { Icon: TbApi, color: "#78e0c1" },
+      { Icon: SiOracle, color: "#f80000" },
       { Icon: TbDatabase, color: "#a7b8ff" },
       { Icon: SiPostgresql, color: "#699eca" },
       { Icon: SiFirebase, color: "#ffca28" },
     ],
   },
   {
-    title: "Git, GitHub, Jira, Confluence, Agile, Scrum",
-    level: 4,
+    title: "Git, GitHub, Postman, Jira, Confluence, Agile / Scrum",
+    level: 5,
     icons: [
       { Icon: SiGit, color: "#f05032" },
       { Icon: SiGithub, color: "#f5f5f5" },
+      { Icon: SiPostman, color: "#ff6c37" },
       { Icon: SiJira, color: "#2684ff" },
       { Icon: SiConfluence, color: "#579dff" },
     ],
   },
   {
     title: "Figma, UI/UX Prototyping",
-    level: 3,
+    level: 5,
     icons: [{ Icon: SiFigma, color: "#f24e1e" }],
   },
 ];
@@ -111,14 +117,17 @@ function SkillsSection() {
       id="skills"
       className="relative flex min-h-screen w-full items-center overflow-hidden text-white"
       style={{
-        background: "linear-gradient(#490079, #4f0349 55%, #720455)",
+        background: "linear-gradient(#720455, #4f0349 55%, #490079)",
       }}
     >
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-5 py-24 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="mb-8 border-b border-white/15 pb-6">
           <h2
-            className="text-4xl font-bold sm:text-5xl"
-            style={{ textShadow: "0 0 18px rgba(251, 131, 219, 0.35)" }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white"
+            style={{
+              textShadow:
+                "0px 0px 15px #fb83db, 0px 0px 30px rgba(251, 131, 219, 0.5)",
+            }}
           >
             Skills
           </h2>
@@ -131,7 +140,7 @@ function SkillsSection() {
               key={group.title}
             >
               <div className="flex items-start justify-between gap-4">
-                <h3 className="max-w-[36ch] text-base font-semibold leading-6 text-white transition-colors group-hover:text-pink-100 sm:text-lg">
+                <h3 className="max-w-[36ch] text-base font-semibold leading-6 text-white transition-all duration-200 ease-out group-hover:text-pink-100 group-hover:[text-shadow:0_0_12px_rgba(251,131,219,0.7)] motion-reduce:transition-none sm:text-lg">
                   {group.title}
                 </h3>
                 <div
@@ -155,7 +164,7 @@ function SkillsSection() {
                 {group.icons.map(({ Icon, color }, iconIndex) => (
                   <Icon
                     aria-hidden="true"
-                    className="h-[22px] w-[22px] shrink-0 opacity-90 transition-transform duration-200 group-hover:scale-110 motion-reduce:transition-none"
+                    className="inline-block h-[22px] w-[22px] shrink-0 align-middle opacity-70 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:brightness-125 motion-reduce:transition-none"
                     key={`${group.title}-${iconIndex}`}
                     style={{ color }}
                   />

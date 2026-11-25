@@ -1,7 +1,7 @@
 export function DownloadCVButton() {
   return (
     <a
-      href="/cv.pdf"
+      href="/Asli_Ayse_Sahin_CV.pdf"
       target="_blank"
       rel="noreferrer"
       className="fixed top-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-32 h-10"

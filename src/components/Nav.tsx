@@ -68,11 +68,23 @@ function Nav() {
           {texts.nav.about}
         </button>
         <button
+          onClick={() => scrollToSection("projects")}
+          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium cursor-pointer"
+        >
+          {texts.nav.projects}
+        </button>
+        <button
           onClick={() => scrollToSection("home")}
           className="flex items-center transition-transform hover:scale-105 cursor-pointer"
           aria-label="Go to home page"
         >
           <img src={logo} alt="Aslı Şahin Logo" className="h-12 w-auto" />
+        </button>
+        <button
+          onClick={() => scrollToSection("showcase")}
+          className="text-white hover:text-blue-300 transition-colors duration-200 font-medium cursor-pointer"
+        >
+          {texts.nav.showcases}
         </button>
         <button
           onClick={() => scrollToSection("skills")}
@@ -108,6 +120,18 @@ function Nav() {
                   className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2 text-left"
                 >
                   {texts.nav.about}
+                </button>
+                <button
+                  onClick={() => scrollToSection("projects")}
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2 text-left"
+                >
+                  {texts.nav.projects}
+                </button>
+                <button
+                  onClick={() => scrollToSection("showcase")}
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium text-sm py-1 px-2 text-left"
+                >
+                  {texts.nav.showcases}
                 </button>
                 <button
                   onClick={() => scrollToSection("skills")}
